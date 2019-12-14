@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <left>
+      <VBox alignment="CENTER" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Procesos" />
+            <ListView fx:id="listviewProcces" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Swap" />
+            <ListView fx:id="listviewSwap" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Configuracion">
+                  <items>
+                    <MenuItem fx:id="mnuMemorySize" mnemonicParsing="false" text="Tamaño de Memoria" />
+                        <MenuItem fx:id="mnuNumPages" mnemonicParsing="false" text="Numero de paginas" />
+                        <MenuItem fx:id="mnuNumFrames" mnemonicParsing="false" text="Frames por pagina" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER" prefHeight="50.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="txtSize" promptText="Size" />
+                  <Button fx:id="btnEnter" mnemonicParsing="false" text="Entra">
+                     <HBox.margin>
+                        <Insets right="80.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField fx:id="txtPid" promptText="PID" />
+                  <Button fx:id="btnSale" mnemonicParsing="false" text="Sale" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Memoria" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" fillHeight="false">
+               <children>
+                  <Label alignment="CENTER" minWidth="125.0" text="Pagina" HBox.hgrow="ALWAYS" />
+                  <Label alignment="CENTER" minWidth="125.0" text="PID" HBox.hgrow="ALWAYS" />
+                  <Label alignment="CENTER" minWidth="125.0" text="Libre" HBox.hgrow="ALWAYS" />
+                  <Label alignment="CENTER" minWidth="125.0" text="Ocupado" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <ScrollPane VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="memoryPane" alignment="TOP_CENTER" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
